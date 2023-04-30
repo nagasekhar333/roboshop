@@ -10,7 +10,7 @@ web:
   - catalogue
 mongodb:
   image: mongodb:v1
-  container_name:mongodb
+  container_name: mongodb
 catalogue:
   image: catalogue:v1
   container_name: catalogue
@@ -24,7 +24,7 @@ user:
   depends_on:
   - mongodb
   - redis
-  
+
 
 
 
