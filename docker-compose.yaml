@@ -43,6 +43,14 @@ shipping:
  container_name: shipping
  depends_on:
  - mysql
+ rabbitmq:
+  image: rabbitmq
+  container_name: rabbitmq
+ payment:
+  image: payments:v1
+  container_name: payment
+  depends_on: 
+  - rabbitmq
 
 
 
