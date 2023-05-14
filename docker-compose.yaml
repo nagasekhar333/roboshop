@@ -63,7 +63,7 @@ services:
   - mongodb
   - redis
  cart:
-  image: sekharmanduri/cart:v2
+  image: sekharmanduri/cart:v1
   container_name: cart
   depends_on:
   - redis
@@ -74,7 +74,7 @@ services:
   volumes:
   - mysql:/var/lib/mysql
  shipping:
-  images: sekharmanduri/shipping:v2
+  images: sekharmanduri/shipping:v1
   container_name: shipping
   depends_on:
   - mysql
