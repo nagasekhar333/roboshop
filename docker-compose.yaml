@@ -53,6 +53,9 @@ services:
   - mongodb
  redis:
   image:redis
+  container_name: redis
+  volumes:
+  - redis:/data
  user:
   image: sekharmanduri/user:v1
   container_name: user
@@ -68,6 +71,8 @@ services:
  mysql:
   image: sekharmanduri/mysql:v1
   container_name: mysql
+  volumes:
+  - mysql:/var/lib/mysql
  shipping:
   images: sekharmanduri/shipping:v2
   container_name: shipping
@@ -76,6 +81,8 @@ services:
  rabbitmq:
   image: rabbitmq
   container_name: rabbitmq
+  volumes:
+  - rabbitmq:/var/lib/rabbitmq
  payment:
   image: sekharmanduri/payment:v1
   container_name: payment
