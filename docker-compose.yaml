@@ -31,7 +31,7 @@ services:
   - mongodb
   - redis
  cart:
-  image: sekharmanduri/cart:v1
+  image: sekharmanduri/cart:v2
   container_name: cart
   depends_on:
   - redis
