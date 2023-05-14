@@ -7,7 +7,6 @@ services:
 networks:
  roboshop:
   driver:bridge
-services:
 web:
   image: web:v1
   container_name: web
