@@ -1,7 +1,9 @@
 FROM node:14
-ENV INSTANA_AUTO_PROFILE true
-EXPOSE 8080
-WORKDIR /opt/server --system cart
+EXPOSE 8080 
+RUN adduser --system cart
+USER cart
+WORKDIR /opt/server
+RUN chmod -R cart:cart /opt/server
 COPY package.json /opt/server/
 RUN ls -lrt
 RUN npm install
