@@ -1,41 +1,43 @@
 version: "3.9"
+network:
  roboshop:
-  driver:bridge
-web:
+  driver: bridge
+services:
+ web:
   image: web:v1
   container_name: web
   depends_on:
   - catalogue
-mongodb:
+ mongodb:
   image: mongodb:v1
   container_name: mongodb
-catalogue:
+ catalogue:
   image: catalogue:v1
   container_name: catalogue
   depends_on:
   - mongodb
-redis:
+ redis:
   image:redis
-user:
+ user:
   image: user:v1
   container_name: user
   depends_on:
   - mongodb
   - redis
-cart:
- image: cart:v1
- container_name: cart
- depends_on:
- - redis
- - catalogue
+ cart:
+  image: cart:v1
+  container_name: cart
+  depends_on:
+  - redis
+  - catalogue
  mysql:
   image: mysql:v1
   container_name: mysql
-shipping:
- images: shipping:v1
- container_name: shipping
- depends_on:
- - mysql
+ shipping:
+  images: shipping:v1
+  container_name: shipping
+  depends_on:
+  - mysql
  rabbitmq:
   image: rabbitmq
   container_name: rabbitmq
