@@ -1,9 +1,4 @@
 version: "3.9"
- mongodb:
- build:
-  context:mongo
- image: ${REPO}/rs-mongodb:${TAG} 
-networks:
  roboshop:
   driver:bridge
 web:
