@@ -52,7 +52,7 @@ services:
   depends_on:
   - mongodb
  redis:
-  image:redis
+  image: redis
   container_name: redis
   volumes:
   - redis:/data
