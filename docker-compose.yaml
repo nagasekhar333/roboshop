@@ -89,10 +89,10 @@ services:
   depends_on: 
   - rabbitmq
  ratings:
-   image: ratings:v1
-   container_name: ratings
-   depends_on:
-   - mysql
+  image: ratings:v1
+  container_name: ratings
+  depends_on:
+  - mysql
 
 
 
